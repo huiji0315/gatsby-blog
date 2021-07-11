@@ -1,7 +1,10 @@
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import PostItem from 'components/Main/PostItem';
 import { FluidObject } from 'gatsby-image';
+import useInfiniteScroll, {
+  useInfiniteScrollType,
+} from 'hooks/useInfiniteScroll';
 
 export type PostType = {
   node: {
@@ -44,19 +47,14 @@ const PostList: FunctionComponent<PostListProps> = function ({
   selectedCategory,
   posts,
 }) {
-  const postListData = useMemo(
-    () =>
-      posts.filter(({ node: { frontmatter: { categories } } }: PostType) =>
-        selectedCategory !== 'All'
-          ? categories.includes(selectedCategory)
-          : true,
-      ),
-    [selectedCategory],
+  const { containerRef, postList }: useInfiniteScrollType = useInfiniteScroll(
+    selectedCategory,
+    posts,
   );
-  // 만약 선택된 카테고리가 존재하면서 All이 아닌 경우에는 해당 카테고리 값을 가진 포스트 아이템만 필터링하도록 했고, 그렇지 않은 경우에는 모든 포스트 아이템을 보여주도록 구현
+
   return (
-    <PostListWrapper>
-      {postListData.map(({ node: { id, frontmatter } }: PostType) => (
+    <PostListWrapper ref={containerRef}>
+      {postList.map(({ node: { id, frontmatter } }: PostType) => (
         <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
       ))}
     </PostListWrapper>
