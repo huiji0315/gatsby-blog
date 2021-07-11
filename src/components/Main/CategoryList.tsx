@@ -26,7 +26,13 @@ const CategoryListWrapper = styled.div`
   flex-wrap: wrap;
   width: 768px;
   margin: 100px auto 0;
-`;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+`; // 양 옆 20px씩 여백을 남겨두고 꽉 채우도록 반응형 디자인 구현
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
@@ -40,6 +46,10 @@ const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
   }
 `;
 
