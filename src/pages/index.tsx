@@ -87,14 +87,18 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
 export default IndexPage;
 
 // 필요한 데이터를 받아오기 위한 쿼리
-export const queryPostList = graphql`
-  query queryPostList {
+// Slug 데이터를 추가로 Query 
+export const getPostList = graphql`
+  query getPostList {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
     ) {
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary
@@ -116,7 +120,7 @@ export const queryPostList = graphql`
         }
       }
     }
-    file(relativePath: { eq: "profile-image.png" }) {
+    file(name: { eq: "profile-image" }) {
       childImageSharp {
         fluid(maxWidth: 120, maxHeight: 120, fit: INSIDE, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
