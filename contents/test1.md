@@ -1,27 +1,87 @@
 ---
-date: '2021-07-11'
+date: '2021-07-17'
 title: 'Test1'
 categories: ['Web', 'SEO', 'Optimization']
-summary: '홈페이지를 운영하는 많은 사람들 또는 기업들이 검색 페이지 최상단에 보여지게 하기 위해 어떤 최적화 작업을 하는지 알아보자.'
-thumbnail: './test.png'
+summary: '마크다운 문법 적용 해보기!!'
+thumbnail: './markdown.png'
 ---
 
-### 1. Help Google Bot to Find My Contents
+# 마크다운 문법 적용 해보기 :)
 
-구글에 SiteMap을 제출하여 사이트에 있는 파일로서 새 페이지나 변경된 페이지가 있을 때 이를 검색 엔진에 알려주도록 할 수 있다.
+# 제목 1
+## 제목 2
+### 제목 3
+#### 제목 4
+##### 제목 5
+###### 제목 6
+<hr/>  
 
-SiteMap은 사이트에 있는 페이지, 동영상 및 기타 파일과 각 관계에 관한 정보를 제공하는 파일로, 검색 엔진은 이를 읽고 사이트를 더 지능적으로 크롤링 할 수 있게 된다.
+이텔릭체는 *별표(asterisks)*
+혹은 _언더바(underscore)_
 
-### 2. Use 'Robots.txt' File
+두껍게는 **별표(asterisks)**
+혹은 __언더바(underscore)__
 
-Robots.txt 파일은 검색 엔진에 어떤 페이지를 크롤링해도 되는지 알리는 파일로, 서버의 루트 디렉토리에 있어야 한다.
+**_이텔릭체_ 와 두껍게**  
+~~물결표시(tilde)~~  
+코드 입력 `<u></u>` `print()`
+<hr/>
 
-과도한 Robots.txt 파일은 더 많은 방문자를 유도할 수 있는 정상적인 검색 엔진 크롤러의 접근을 막을 가능성이 있기 때문에 적절하게 설정해야 한다.
+1. 순서가 필요한 목록
+1. 순서가 필요한 목록
+  - 순서가 필요하지 않은 목록(서브)
+  - 순서가 필요하지 않은 목록(서브)
+1. 순서가 필요한 목록
+   1. 순서가 필요한 목록(서브)
+   1. 순서가 필요한 목록(서브)
+1. 순서가 필요한 목록
+
+- 순서가 필요하지 않은 목록에 사용 가능한 기호
+  - 대쉬(hyphen)
+  * 별표(asterisks)
+  + 더하기(plus sign)
+
+***
+  * 1단계
+    - 2단계
+      + 3단계
+        + 4단계
+***
+[GOOGLE](https://google.com)  
+[NAVER](https://naver.com "링크 설명(title)을 작성하세요.")
+***
+```javascript
+function func() {
+  var a = 'AAA';
+  return a;
+}
+```
+***
+ 값 | 의미 | 기본값
+---|:---:|---:|
+ `static` | 유형(기준) 없음 / 배치 불가능 | `static`
+ `relative` | 요소 자신을 기준으로 배치 |  
+ `absolute` | 위치 상 부모(조상)요소를 기준으로 배치 |  
+ `fixed` | 브라우저 창을 기준으로 배치 |  
+
+***
+
+ 인용문(blockQuote)
+
+> 남의 말이나 글에서 직접 또는 간접으로 따온 문장.
+> _(네이버 국어 사전)_
+
+BREAK!
+
+> 인용문을 작성하세요!
+>> 중첩된 인용문(nested blockquote)을 만들 수 있습니다.
+>>> 중중첩된 인용문 1
+>>> 중중첩된 인용문 2
+>>> 중중첩된 인용문 3
 
 ---
-
-## Source
-
-- SEO 기본 가이드
-
-  [<https://support.google.com/webmasters/answer/7451184?hl=ko&ref_topic=9460495>](<https://support.google.com/webmasters/answer/7451184?hl=ko&ref_topic=9460495>)
+(Hyphens)
+***
+(Asterisks)
+___
+(Underscores)
