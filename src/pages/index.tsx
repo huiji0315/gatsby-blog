@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useMemo } from 'react';
-import styled from '@emotion/styled';
-import GlobalStyle from 'components/Common/GlobalStyle';
-import Footer from 'components/Common/Footer';
+import Template from 'components/Common/Template';
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import Introduction from 'components/Main/Introduction';
 import PostList, { PostType } from 'components/Main/PostList';
@@ -24,12 +22,6 @@ interface IndexPageProps {
     };
   };
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
 
 // 쿼리를 통해 받은 데이터는 data라는 이름의 Props에 담겨있다.
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
@@ -74,20 +66,21 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Container>
-      <GlobalStyle />
+    <Template>
       <Introduction profileImage={fluid} />
-      <CategoryList selectedCategory={selectedCategory} categoryList={categoryList} />
+      <CategoryList
+        selectedCategory={selectedCategory}
+        categoryList={categoryList}
+      />
       <PostList selectedCategory={selectedCategory} posts={edges} />
-      <Footer />
-    </Container>
+    </Template>
   );
 };
 
 export default IndexPage;
 
 // 필요한 데이터를 받아오기 위한 쿼리
-// Slug 데이터를 추가로 Query 
+// Slug 데이터를 추가로 Query
 export const getPostList = graphql`
   query getPostList {
     allMarkdownRemark(

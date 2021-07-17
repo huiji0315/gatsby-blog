@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
+import Template from 'components/Common/Template';
 
 interface PostTemplateProps {}
 
