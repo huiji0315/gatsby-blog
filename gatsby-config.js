@@ -69,5 +69,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://huiji0315-gatsby-blog.github.io/',
+        stripQueryString: true,
+      },
+    },
   ],
 }

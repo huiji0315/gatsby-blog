@@ -13,6 +13,7 @@
     "@types/react-helmet": "^6.1.2",
     "gatsby": "^3.8.1",
     "gatsby-image": "^3.9.0",
+    "gatsby-plugin-canonical-urls": "^3.9.0",
     "gatsby-plugin-emotion": "^6.9.0",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-offline": "^4.8.0",
