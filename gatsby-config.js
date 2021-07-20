@@ -3,7 +3,7 @@ module.exports = {
     title: `Huiji's Dev Blog`,
     description: `컴퓨터공학과에 재학하면서 공부한 개발 내용들을 정리하는 블로그입니다.`,
     author: `Huiji`,
-    siteUrl: `https://huiji0315-gatsby-blog.github.io/`,
+    siteUrl: `https://huiji0315.github.io/`,
   },
   plugins: [
     {
@@ -72,7 +72,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://huiji0315-gatsby-blog.github.io/',
+        siteUrl: 'https://huiji0315.github.io/',
         stripQueryString: true,
       },
     },
