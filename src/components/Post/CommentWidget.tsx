@@ -32,7 +32,7 @@ const CommentWidget: FunctionComponent = function () {
     const attributes: UtterancesAttributesType = {
       src,
       repo,
-      'issue-term': 'pathname',
+      'issue-term': 'url',
       label: 'Comment',
       theme: `github-light`,
       crossorigin: 'anonymous',
